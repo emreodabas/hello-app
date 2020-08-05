@@ -1,0 +1,33 @@
+FROM oracle/graalvm-ce:20.1.0-java11
+
+ADD . /target
+WORKDIR /target
+
+RUN yum install -y unzip zip
+
+RUN \
+    curl -s "https://get.sdkman.io" | bash; \
+    source "$HOME/.sdkman/bin/sdkman-init.sh"; \
+    sdk install maven; \
+    gu install native-image;
+
+RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && mvn --version
+
+RUN native-image --version
+
+RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && ./compile.sh
+
+FROM oraclelinux:7-slim
+
+
+COPY --from=0 "/target/native-image/hello-app-spring-boot" hello-app-spring-boot
+
+CMD [ "sh", "-c", "./spring-boot-graal" ]
+
+
+
+
+#ADD target/hello-app-0.0.1-SNAPSHOT.jar app.jar
+
+#ENTRYPOINT ["java","-jar","app.jar"]
+#EXPOSE 9091
