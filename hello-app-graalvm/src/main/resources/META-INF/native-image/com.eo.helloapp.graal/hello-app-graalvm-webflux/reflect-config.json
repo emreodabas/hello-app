@@ -1,0 +1,7 @@
+[
+  {
+    "name": "com.eo.helloapp.graal.Greeting",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  }
+]
