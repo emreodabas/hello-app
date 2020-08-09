@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: base-golang
+  name: base-golang
+  namespace: golang
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: base-golang
+  template:
+    metadata:
+      labels:
+        app: base-golang
+    spec:
+      containers:
+      - image: emreodabas/emreodabas/hello-app-golang:base
+        name: hello-app-golang
+        resources:
+          requests:
+            memory: "2Gi" 
+            cpu: "1000m"  
+          limits:
+            memory: "2Gi"
+            cpu: "1000m" 
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: base-golang
+  name: base-golang
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: base-golang
+  type: NodePort
+status:
+  loadBalancer: {}
