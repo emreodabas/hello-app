@@ -16,7 +16,7 @@ spec:
         app: base-golang
     spec:
       containers:
-      - image: emreodabas/emreodabas/hello-app-golang:base
+      - image: emreodabas/hello-app-golang:base
         name: hello-app-golang
         resources:
           requests:
@@ -35,6 +35,7 @@ metadata:
   labels:
     app: base-golang
   name: base-golang
+  namespace: golang
 spec:
   ports:
   - port: 8080

@@ -15,8 +15,11 @@
   * base-openjdk16
   * base-openjdk11
   * base-corretto11
+* Micronaut
+* Quarkus
 * Golang base (emreodabas/hello-app-golang)
-* NodeJs base (emreodabas/hello-app-nodejs)
+* NodeJS base (emreodabas/hello-app-nodejs)
+
 
  All applications' resource yaml defined in related folder
 

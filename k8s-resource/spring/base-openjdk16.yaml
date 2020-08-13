@@ -35,6 +35,7 @@ metadata:
   labels:
     app: base-openjdk16
   name: base-openjdk16
+  namespace: spring
 spec:
   ports:
   - port: 8080
