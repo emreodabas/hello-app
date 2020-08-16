@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 public class ExampleResource {
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     @Path("/{name}")
     public String hello(@PathParam("name") String name) {
         return "hello " + name;
