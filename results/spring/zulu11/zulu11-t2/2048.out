@@ -1,0 +1,47 @@
+
+Summary:
+  Total:	120.4376 secs
+  Slowest:	1.6269 secs
+  Fastest:	0.0002 secs
+  Average:	0.3743 secs
+  Requests/sec:	5368.4333
+  
+  Total data:	12280783 bytes
+  Size/request:	19 bytes
+
+Response time histogram:
+  0.000 [1]	|
+  0.163 [17198]	|■■
+  0.326 [145741]	|■■■■■■■■■■■■■■
+  0.488 [421240]	|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  0.651 [52879]	|■■■■■
+  0.814 [6395]	|■
+  0.976 [2165]	|
+  1.139 [461]	|
+  1.302 [51]	|
+  1.464 [185]	|
+  1.627 [41]	|
+
+
+Latency distribution:
+  10% in 0.2727 secs
+  25% in 0.3251 secs
+  50% in 0.3828 secs
+  75% in 0.4090 secs
+  90% in 0.4858 secs
+  95% in 0.5301 secs
+  99% in 0.6961 secs
+
+Details (average, fastest, slowest):
+  DNS+dialup:	0.0000 secs, 0.0002 secs, 1.6269 secs
+  DNS-lookup:	0.0004 secs, 0.0000 secs, 0.1296 secs
+  req write:	0.0000 secs, 0.0000 secs, 0.0490 secs
+  resp wait:	0.3725 secs, 0.0002 secs, 1.5035 secs
+  resp read:	0.0000 secs, 0.0000 secs, 0.0849 secs
+
+Status code distribution:
+  [200]	646357 responses
+
+Error distribution:
+  [204]	Get http://node1-k8s:30305/oWXl3STbYbmCa: net/http: request canceled (Client.Timeout exceeded while awaiting headers)
+

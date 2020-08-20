@@ -4,8 +4,8 @@ GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
-DOCKER_PATH="emreodabas/hello-app"
-VERSION="golang"
+DOCKER_PATH="emreodabas/hello-app-golang"
+VERSION="base"
 BINARY_NAME=hello_app
 BINARY_UNIX=$(BINARY_NAME)_unix
 all: test build
