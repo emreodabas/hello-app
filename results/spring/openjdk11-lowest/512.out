@@ -1,0 +1,73 @@
+
+Summary:
+  Total:	66.4217 secs
+  Slowest:	9.8474 secs
+  Fastest:	0.0006 secs
+  Average:	2.5653 secs
+  Requests/sec:	8945.0801
+  
+  Total data:	54245 bytes
+  Size/request:	19 bytes
+
+Response time histogram:
+  0.001 [1]	|
+  0.985 [501]	|■■■■■■■■■■■■■
+  1.970 [1511]	|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  2.955 [279]	|■■■■■■■
+  3.939 [49]	|■
+  4.924 [1]	|
+  5.909 [1]	|
+  6.893 [155]	|■■■■
+  7.878 [54]	|■
+  8.863 [141]	|■■■■
+  9.847 [162]	|■■■■
+
+
+Latency distribution:
+  10% in 0.6948 secs
+  25% in 1.1032 secs
+  50% in 1.4952 secs
+  75% in 2.3999 secs
+  90% in 8.0384 secs
+  95% in 9.0259 secs
+  99% in 9.6308 secs
+
+Details (average, fastest, slowest):
+  DNS+dialup:	0.1505 secs, 0.0006 secs, 9.8474 secs
+  DNS-lookup:	0.0051 secs, 0.0000 secs, 0.0324 secs
+  req write:	0.0008 secs, 0.0000 secs, 0.0060 secs
+  resp wait:	2.2215 secs, 0.0005 secs, 9.8178 secs
+  resp read:	0.0000 secs, 0.0000 secs, 0.0013 secs
+
+Status code distribution:
+  [200]	2855 responses
+
+Error distribution:
+  [591266]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: dial tcp 10.128.0.6:30515: connect: connection refused
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51892->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51894->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51910->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51912->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51914->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51918->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51922->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51924->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:51926->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52516->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52518->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52522->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52540->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52542->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52544->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52546->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52558->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52560->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52562->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52580->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52582->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52584->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52780->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52782->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52784->10.128.0.6:30515: read: connection reset by peer
+  [1]	Get http://node1-k8s:30515/l2sLUVQm2Yj2B: read tcp 10.128.0.13:52786->10.128.0.6:30515: read: connection reset by peer
+

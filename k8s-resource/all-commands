@@ -5,6 +5,11 @@ kubectl create deploy base-openjdk11 -n spring  --image=emreodabas/hello-app-spr
 kubectl create deploy base-openjdk16 -n spring  --image=emreodabas/hello-app-spring-boot:base-openjdk16
 kubectl create deploy base-golang -n golang  --image=emreodabas/hello-app-golang:base
 kubectl create deploy base-nodejs -n nodejs  --image=emreodabas/hello-app-nodejs:base
+kubectl create deploy base-quarkus -n graalvm  --image=emreodabas/hello-app-quarkus:base-native-11
+kubectl create deploy base-micronaut -n graalvm  --image=emreodabas/hello-app-micronaut:base-11
+kubectl create deploy base-rust -n rust  --image=emreodabas/hello-app-rust:base-alpine
+
+
 
 kubectl expose deploy base-corretto11 -n spring --port 8080 --type=NodePort
 kubectl expose deploy base-zulu11 -n spring --port 8080 --type=NodePort
@@ -13,6 +18,10 @@ kubectl expose deploy base-openjdk11 -n spring --port 8080 --type=NodePort
 kubectl expose deploy base-openjdk16 -n spring --port 8080 --type=NodePort
 kubectl expose deploy base-golang -n golang --port 8080 --type=NodePort
 kubectl expose deploy base-nodejs -n nodejs --port 8080 --type=NodePort
+kubectl expose deploy base-quarkus -n graalvm --port 8080 --type=NodePort
+kubectl expose deploy base-micronaut -n graalvm --port 8080 --type=NodePort
+kubectl expose deploy base-rust -n rust --port 8080 --type=NodePort
+
 
 
 ## default a1.medium
@@ -23,6 +32,10 @@ kubectl set resources deploy base-openjdk11 -n spring  --limits=cpu=1,memory="2G
 kubectl set resources deploy base-openjdk16 -n spring  --limits=cpu=1,memory="2Gi" --requests=cpu=1,memory="2Gi"
 kubectl set resources deploy base-golang -n golang  --limits=cpu=1,memory="2Gi" --requests=cpu=1,memory="2Gi"
 kubectl set resources deploy base-nodejs -n nodejs  --limits=cpu=1,memory="2Gi" --requests=cpu=1,memory="2Gi"
+kubectl set resources deploy base-quarkus -n graalvm  --limits=cpu=1,memory="2Gi" --requests=cpu=1,memory="2Gi"
+kubectl set resources deploy base-micronaut -n graalvm --limits=cpu=1,memory="2Gi" --requests=cpu=1,memory="2Gi"
+kubectl set resources deploy base-rust -n rust --limits=cpu=1,memory="2Gi" --requests=cpu=1,memory="2Gi"
+
 
 
 
@@ -35,6 +48,10 @@ kubectl patch deploy base-openjdk11 -n spring  --type=json -p='[{"op":"replace",
 kubectl patch deploy base-openjdk16 -n spring --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"2Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"2Gi"}]'
 kubectl patch deploy base-golang -n golang --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"2Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"2Gi"}]'
 kubectl patch deploy base-nodejs -n nodejs --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"2Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"2Gi"}]'
+kubectl patch deploy base-quarkus -n graalvm --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"2Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"2Gi"}]'
+kubectl patch deploy base-micronaut -n graalvm --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"2Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"2Gi"}]'
+kubectl patch deploy base-rust -n rust --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"2Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"2Gi"}]'
+
 
 
 
@@ -47,6 +64,9 @@ kubectl patch deploy base-openjdk11 -n spring  --type=json -p='[{"op":"replace",
 kubectl patch deploy base-openjdk16 -n spring --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"0.5Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"0.5Gi"}]'
 kubectl patch deploy base-golang -n golang --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"0.5Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"0.5Gi"}]'
 kubectl patch deploy base-nodejs -n nodejs --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"0.5Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"0.5Gi"}]'
+kubectl patch deploy base-quarkus -n graalvm --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"0.5Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"0.5Gi"}]'
+kubectl patch deploy base-micronaut -n graalvm --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"0.5Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"0.5Gi"}]'
+kubectl patch deploy base-rust -n rust --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"0.5Gi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"1"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"0.5Gi"}]'
 
 
 ## All the lowest
@@ -58,3 +78,6 @@ kubectl patch deploy base-openjdk11 -n spring  --type=json -p='[{"op":"replace",
 kubectl patch deploy base-openjdk16 -n spring --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"256Mi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"256Mi"}]'
 kubectl patch deploy base-golang -n golang --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"256Mi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"256Mi"}]'
 kubectl patch deploy base-nodejs -n nodejs --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"256Mi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"256Mi"}]'
+kubectl patch deploy base-quarkus -n graalvm --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"256Mi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"256Mi"}]'
+kubectl patch deploy base-micronaut -n graalvm --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"256Mi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"256Mi"}]'
+kubectl patch deploy base-rust -n rust --type=json -p='[{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/requests/memory","value":"256Mi"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/cpu","value":"0.25"},{"op":"replace","path":"/spec/template/spec/containers/0/resources/limits/memory","value":"256Mi"}]'

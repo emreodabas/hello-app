@@ -1,0 +1,47 @@
+
+Summary:
+  Total:	61.1737 secs
+  Slowest:	18.5403 secs
+  Fastest:	0.0019 secs
+  Average:	1.8678 secs
+  Requests/sec:	601.2385
+  
+  Total data:	455810 bytes
+  Size/request:	19 bytes
+
+Response time histogram:
+  0.002 [1]	|
+  1.856 [18074]	|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  3.710 [4936]	|■■■■■■■■■■■
+  5.563 [213]	|
+  7.417 [0]	|
+  9.271 [0]	|
+  11.125 [2]	|
+  12.979 [1]	|
+  14.833 [282]	|■
+  16.686 [251]	|■
+  18.540 [230]	|■
+
+
+Latency distribution:
+  10% in 0.6038 secs
+  25% in 0.9094 secs
+  50% in 1.3154 secs
+  75% in 1.8113 secs
+  90% in 2.5992 secs
+  95% in 3.1997 secs
+  99% in 16.5358 secs
+
+Details (average, fastest, slowest):
+  DNS+dialup:	0.0028 secs, 0.0019 secs, 18.5403 secs
+  DNS-lookup:	0.0012 secs, 0.0000 secs, 0.0423 secs
+  req write:	0.0001 secs, 0.0000 secs, 0.0071 secs
+  resp wait:	1.3784 secs, 0.0004 secs, 4.7979 secs
+  resp read:	0.0000 secs, 0.0000 secs, 0.0091 secs
+
+Status code distribution:
+  [200]	23990 responses
+
+Error distribution:
+  [12790]	Get http://node1-k8s:32329/QsWxggj9yWE1H: dial tcp 10.128.0.6:32329: connect: connection refused
+

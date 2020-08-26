@@ -1,0 +1,49 @@
+
+Summary:
+  Total:	60.0520 secs
+  Slowest:	16.8867 secs
+  Fastest:	0.0007 secs
+  Average:	3.1102 secs
+  Requests/sec:	3394.8435
+  
+  Total data:	98192 bytes
+  Size/request:	19 bytes
+
+Response time histogram:
+  0.001 [1]	|
+  1.689 [1374]	|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  3.378 [1470]	|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  5.067 [1702]	|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  6.755 [419]	|■■■■■■■■■■
+  8.444 [78]	|■■
+  10.132 [55]	|■
+  11.821 [28]	|■
+  13.509 [20]	|
+  15.198 [1]	|
+  16.887 [20]	|
+
+
+Latency distribution:
+  10% in 0.0040 secs
+  25% in 1.4050 secs
+  50% in 3.1989 secs
+  75% in 4.3989 secs
+  90% in 5.1955 secs
+  95% in 6.1963 secs
+  99% in 11.3898 secs
+
+Details (average, fastest, slowest):
+  DNS+dialup:	0.0169 secs, 0.0007 secs, 16.8867 secs
+  DNS-lookup:	0.0033 secs, 0.0000 secs, 0.0440 secs
+  req write:	0.0002 secs, 0.0000 secs, 0.0037 secs
+  resp wait:	2.9679 secs, 0.0007 secs, 16.8519 secs
+  resp read:	0.0000 secs, 0.0000 secs, 0.0004 secs
+
+Status code distribution:
+  [200]	5168 responses
+
+Error distribution:
+  [197802]	Get http://node1-k8s:30515/aL850TikxLQZL: dial tcp 10.128.0.6:30515: connect: connection refused
+  [137]	Get http://node1-k8s:30515/aL850TikxLQZL: net/http: request canceled (Client.Timeout exceeded while awaiting headers)
+  [760]	Get http://node1-k8s:30515/aL850TikxLQZL: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+

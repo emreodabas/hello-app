@@ -1,5 +1,5 @@
-FROM alpine
-COPY hello_app_unix /hello_app_unix
-ENTRYPOINT ["./hello_app_unix"]
+FROM alpine:latest
+COPY hello_app_unix /hello_app
+ENTRYPOINT ["./hello_app"]
 USER nobody
 EXPOSE 8080
